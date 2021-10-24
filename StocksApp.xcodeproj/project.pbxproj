@@ -101,6 +101,11 @@
 		341C10AE272530CA0039B4B5 /* StocksApp */ = {
 			isa = PBXGroup;
 			children = (
+				341C10E62725DF630039B4B5 /* other */,
+				341C10E52725DF5D0039B4B5 /* managers */,
+				341C10E42725DF350039B4B5 /* models */,
+				341C10E32725DF2D0039B4B5 /* controllers */,
+				341C10E22725DF1E0039B4B5 /* views */,
 				341C10AF272530CA0039B4B5 /* AppDelegate.swift */,
 				341C10B1272530CA0039B4B5 /* SceneDelegate.swift */,
 				341C10B3272530CA0039B4B5 /* ViewController.swift */,
@@ -129,6 +134,41 @@
 				341C10D6272530CC0039B4B5 /* Info.plist */,
 			);
 			path = StocksAppUITests;
+			sourceTree = "<group>";
+		};
+		341C10E22725DF1E0039B4B5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		341C10E32725DF2D0039B4B5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		341C10E42725DF350039B4B5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		341C10E52725DF5D0039B4B5 /* managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		341C10E62725DF630039B4B5 /* other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
