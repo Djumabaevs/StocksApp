@@ -17,6 +17,8 @@
 		341C10CA272530CC0039B4B5 /* StocksAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10C9272530CC0039B4B5 /* StocksAppTests.swift */; };
 		341C10D5272530CC0039B4B5 /* StocksAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10D4272530CC0039B4B5 /* StocksAppUITests.swift */; };
 		341C10E82725E0BA0039B4B5 /* TopStoriesNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10E72725E0BA0039B4B5 /* TopStoriesNewsViewController.swift */; };
+		341C10EA2725E1170039B4B5 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10E92725E1170039B4B5 /* SearchResultsViewController.swift */; };
+		341C10EC2725E13B0039B4B5 /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10EB2725E13B0039B4B5 /* StockDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		341C10D4272530CC0039B4B5 /* StocksAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksAppUITests.swift; sourceTree = "<group>"; };
 		341C10D6272530CC0039B4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		341C10E72725E0BA0039B4B5 /* TopStoriesNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesNewsViewController.swift; sourceTree = "<group>"; };
+		341C10E92725E1170039B4B5 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		341C10EB2725E13B0039B4B5 /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			children = (
 				341C10B3272530CA0039B4B5 /* WatchListViewController.swift */,
 				341C10E72725E0BA0039B4B5 /* TopStoriesNewsViewController.swift */,
+				341C10E92725E1170039B4B5 /* SearchResultsViewController.swift */,
+				341C10EB2725E13B0039B4B5 /* StockDetailsViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -305,8 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				341C10B4272530CA0039B4B5 /* WatchListViewController.swift in Sources */,
+				341C10EA2725E1170039B4B5 /* SearchResultsViewController.swift in Sources */,
 				341C10B0272530CA0039B4B5 /* AppDelegate.swift in Sources */,
 				341C10E82725E0BA0039B4B5 /* TopStoriesNewsViewController.swift in Sources */,
+				341C10EC2725E13B0039B4B5 /* StockDetailsViewController.swift in Sources */,
 				341C10BA272530CA0039B4B5 /* StocksApp.xcdatamodeld in Sources */,
 				341C10B2272530CA0039B4B5 /* SceneDelegate.swift in Sources */,
 			);
