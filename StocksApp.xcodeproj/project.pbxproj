@@ -22,6 +22,7 @@
 		341C10F02726DF900039B4B5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10EF2726DF900039B4B5 /* PersistenceManager.swift */; };
 		341C10F22726DFB30039B4B5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F12726DFB30039B4B5 /* HapticsManager.swift */; };
 		341C10F4272727DE0039B4B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F3272727DE0039B4B5 /* Extensions.swift */; };
+		341C10F627272C990039B4B5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		341C10EF2726DF900039B4B5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		341C10F12726DFB30039B4B5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		341C10F3272727DE0039B4B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				341C10BD272530CC0039B4B5 /* LaunchScreen.storyboard */,
+				341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				341C10B4272530CA0039B4B5 /* WatchListViewController.swift in Sources */,
 				341C10EA2725E1170039B4B5 /* SearchResultsViewController.swift in Sources */,
+				341C10F627272C990039B4B5 /* SearchResultTableViewCell.swift in Sources */,
 				341C10B0272530CA0039B4B5 /* AppDelegate.swift in Sources */,
 				341C10E82725E0BA0039B4B5 /* TopStoriesNewsViewController.swift in Sources */,
 				341C10EC2725E13B0039B4B5 /* StockDetailsViewController.swift in Sources */,
