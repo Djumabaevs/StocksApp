@@ -34,3 +34,18 @@ class SearchResultsViewController: UIViewController {
     }
 
 }
+
+extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath)
+        cell.textLabel?.text = "Pet"
+        cell.detailTextLabel?.text = "Color = Dark gray"
+        
+        return cell
+    }
+}
