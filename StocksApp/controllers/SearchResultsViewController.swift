@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SearchResultsViewControllerDelegate: AnyObject {
+    func searchResultsViewControllerDidSelect(searchResult: String)
+}
+
 class SearchResultsViewController: UIViewController {
+    
+    weak var delegate: SearchResultsViewControllerDelegate?
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -24,7 +30,7 @@ class SearchResultsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        tableView.frame = view.bounds
     }
     
     private func setupTable() {
