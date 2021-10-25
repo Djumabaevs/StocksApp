@@ -9,9 +9,11 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
     
-    private let tableView: UITableView {
-        
-    }
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        //Register a cell
+        return tableView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
