@@ -27,7 +27,11 @@ class WatchListViewController: UIViewController {
                                 y: 0,
                                 width: view.width,
                                 height: navigationController?.navigationBar.height ?? 100))
-        titleView.backgroundColor = .link
+   //     titleView.backgroundColor = .link
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: titleView.width - 20, height: titleView.height))
+        label.text = "GoChip"
+        label.font = .systemFont(ofSize: 38, weight: .medium)
+        titleView.addSubview(label)
         navigationItem.titleView = titleView
         
     }
