@@ -38,6 +38,7 @@ class WatchListViewController: UIViewController {
 
     private func setupSearchController() {
         let resultVC = SearchResultsViewController()
+        resultVC.delegate = self
         let searchVC = UISearchController(searchResultsController: resultVC)
         searchVC.searchResultsUpdater = self
         navigationItem.searchController = searchVC
@@ -59,6 +60,12 @@ extension WatchListViewController: UISearchResultsUpdating {
         //Update results controller
         
 //        print(query)
+    }
+}
+
+extension WatchListViewController: SearchResultsViewControllerDelegate {
+    func searchResultsViewControllerDidSelect(searchResult: String) {
+        //Present pet details for given selection
     }
 }
 
