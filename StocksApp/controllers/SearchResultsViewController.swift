@@ -12,7 +12,6 @@ protocol SearchResultsViewControllerDelegate: AnyObject {
 }
 
 class SearchResultsViewController: UIViewController {
-    
     weak var delegate: SearchResultsViewControllerDelegate?
     
     private let tableView: UITableView = {
@@ -53,5 +52,10 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         cell.detailTextLabel?.text = "Color = Dark gray"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.searchResultsViewControllerDidSelect(searchResult: "Pets from delegate")
     }
 }
