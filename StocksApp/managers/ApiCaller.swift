@@ -23,4 +23,14 @@ final class ApiCaller {
     private enum Endpoint: String {
         case search
     }
+    
+    private func url(
+        for endpoint: Endpoint,
+        queryParams: [String: String] = [:]
+    ) -> URL? {
+        
+        return nil
+    }
+    
+    
 }
