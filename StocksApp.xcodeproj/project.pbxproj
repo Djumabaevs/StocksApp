@@ -18,6 +18,9 @@
 		341C10E82725E0BA0039B4B5 /* TopStoriesNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10E72725E0BA0039B4B5 /* TopStoriesNewsViewController.swift */; };
 		341C10EA2725E1170039B4B5 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10E92725E1170039B4B5 /* SearchResultsViewController.swift */; };
 		341C10EC2725E13B0039B4B5 /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10EB2725E13B0039B4B5 /* StockDetailsViewController.swift */; };
+		341C10EE2726DF810039B4B5 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10ED2726DF810039B4B5 /* ApiCaller.swift */; };
+		341C10F02726DF900039B4B5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10EF2726DF900039B4B5 /* PersistenceManager.swift */; };
+		341C10F22726DFB30039B4B5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F12726DFB30039B4B5 /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		341C10E72725E0BA0039B4B5 /* TopStoriesNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesNewsViewController.swift; sourceTree = "<group>"; };
 		341C10E92725E1170039B4B5 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		341C10EB2725E13B0039B4B5 /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
+		341C10ED2726DF810039B4B5 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		341C10EF2726DF900039B4B5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		341C10F12726DFB30039B4B5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,9 @@
 		341C10E52725DF5D0039B4B5 /* managers */ = {
 			isa = PBXGroup;
 			children = (
+				341C10ED2726DF810039B4B5 /* ApiCaller.swift */,
+				341C10EF2726DF900039B4B5 /* PersistenceManager.swift */,
+				341C10F12726DFB30039B4B5 /* HapticsManager.swift */,
 			);
 			path = managers;
 			sourceTree = "<group>";
@@ -312,7 +321,10 @@
 				341C10E82725E0BA0039B4B5 /* TopStoriesNewsViewController.swift in Sources */,
 				341C10EC2725E13B0039B4B5 /* StockDetailsViewController.swift in Sources */,
 				341C10BA272530CA0039B4B5 /* StocksApp.xcdatamodeld in Sources */,
+				341C10F02726DF900039B4B5 /* PersistenceManager.swift in Sources */,
 				341C10B2272530CA0039B4B5 /* SceneDelegate.swift in Sources */,
+				341C10F22726DFB30039B4B5 /* HapticsManager.swift in Sources */,
+				341C10EE2726DF810039B4B5 /* ApiCaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
