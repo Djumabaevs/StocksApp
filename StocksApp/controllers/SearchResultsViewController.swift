@@ -12,6 +12,7 @@ class SearchResultsViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         //Register a cell
+        tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
         return tableView
     }()
 
