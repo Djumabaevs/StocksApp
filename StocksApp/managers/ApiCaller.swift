@@ -10,7 +10,11 @@ import Foundation
 final class ApiCaller {
     static let shared = ApiCaller()
     
-    private
+    private struct Constants {
+        static let apiKey = ""
+        static let sandboxApiKey = ""
+        static let baseUrl = ""
+    }
     
     private init() {}
     
