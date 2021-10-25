@@ -8,12 +8,22 @@
 import UIKit
 
 class WatchListViewController: UIViewController {
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
      
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
+        setupTitleView()
+    }
+    
+    //MARK: - Private
+    
+    private func setupTitleView() {
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+        
     }
 
     private func setupSearchController() {
@@ -27,11 +37,18 @@ class WatchListViewController: UIViewController {
 extension WatchListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let query = searchController.searchBar.text,
+              let resultsVC = searchController.searchResultsController as? SearchResultsViewController,
               !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
+        //Optimize to reduce number of searches for when user stops typing
         
-        print(query)
+        //Call API to search
+        
+        
+        //Update results controller
+        
+//        print(query)
     }
 }
 
