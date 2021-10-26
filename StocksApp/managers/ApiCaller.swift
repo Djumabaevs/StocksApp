@@ -45,13 +45,17 @@ final class ApiCaller {
         var queryItems = [URLQueryItem]()
         
         //Add any parameters
-        
+        for (key, value) in queryParams {
+            queryItems.append(.init(name: key, value: value))
+        }
         
         //Add token
         queryItems.append(.init(name: "token", value: Constants.apiKey))
         
+        //Convert query items to suffix string
+        let queryString = queryItems.map{ ("\($0.name)=\($0.value ?? "")" }.joined(separator: "&")
         
-        return nil
+        return URL(string: urlString)
     }
     
     private func request<T: Codable>(
