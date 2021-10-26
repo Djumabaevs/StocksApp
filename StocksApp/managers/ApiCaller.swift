@@ -23,14 +23,14 @@ final class ApiCaller {
     
     public func search(
         query: String,
-        completion: @escaping (Result<SearchResult, Error>) -> Void
+        completion: @escaping (Result<SearchResponse, Error>) -> Void
             ) {
         
         //Smarter way
         
         request(
             url: url(for: .search, queryParams: ["q":query]),
-            expecting: SearchResult.self,
+            expecting: SearchResponse.self,
             completion: completion)
         
 //                guard let url = url(
