@@ -14,6 +14,8 @@ protocol SearchResultsViewControllerDelegate: AnyObject {
 class SearchResultsViewController: UIViewController {
     weak var delegate: SearchResultsViewControllerDelegate?
     
+    private var results: [String] = []
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         //Register a cell
@@ -36,6 +38,11 @@ class SearchResultsViewController: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    public func update(with results: [String]) {
+        self.results = results
+        tableView.reloadData()
     }
 
 }

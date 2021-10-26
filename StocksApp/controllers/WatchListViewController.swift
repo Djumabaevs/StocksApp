@@ -58,6 +58,7 @@ extension WatchListViewController: UISearchResultsUpdating {
         
         
         //Update results controller
+        resultsVC.update(with: ["Breeds of pets"])
         
 //        print(query)
     }

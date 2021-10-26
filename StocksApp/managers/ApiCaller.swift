@@ -11,9 +11,10 @@ final class ApiCaller {
     static let shared = ApiCaller()
     
     private struct Constants {
-        static let apiKey = ""
-        static let sandboxApiKey = ""
-        static let baseUrl = ""
+        static let apiKey = "c5s17qaad3ia8bfb6ao0"
+        static let sandboxApiKey = "sandbox_c5s17qaad3ia8bfb6aog"
+        static let baseUrl = "https://finnhub.io/api/v1/"
+        static let secret = "c5s17qaad3ia8bfb6ap0"
     }
     
     private init() {}
@@ -39,6 +40,7 @@ final class ApiCaller {
         for endpoint: Endpoint,
         queryParams: [String: String] = [:]
     ) -> URL? {
+        var urlString = Constants.baseUrl + endpoint.rawValue
         
         return nil
     }
