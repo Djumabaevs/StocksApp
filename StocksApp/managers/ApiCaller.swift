@@ -42,6 +42,15 @@ final class ApiCaller {
     ) -> URL? {
         var urlString = Constants.baseUrl + endpoint.rawValue
         
+        var queryItems = [URLQueryItem]()
+        
+        //Add any parameters
+        
+        
+        //Add token
+        queryItems.append(.init(name: "token", value: Constants.apiKey))
+        
+        
         return nil
     }
     
