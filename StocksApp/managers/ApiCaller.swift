@@ -23,15 +23,23 @@ final class ApiCaller {
     
     public func search(
         query: String,
-        completion: @escaping (Result<[String], Error>) -> Void
+        completion: @escaping (Result<SearchResult, Error>) -> Void
             ) {
-                guard let url = url(
-                    for: .search,
-                    queryParams: ["q": query]
-                ) else {
-                    return
-                }
-        print(url.absoluteURL)
+        
+        //Smarter way
+        
+        request(
+            url: url(for: .search, queryParams: ["q":query]),
+            expecting: SearchResult.self,
+            completion: completion)
+        
+//                guard let url = url(
+//                    for: .search,
+//                    queryParams: ["q": query]
+//                ) else {
+//                    return
+//                }
+//        print(url.absoluteURL)
             }
     
     //get stock info
