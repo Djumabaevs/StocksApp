@@ -25,7 +25,12 @@ final class ApiCaller {
         query: String,
         completion: @escaping (Result<[String], Error>) -> Void
             ) {
-            
+                guard let url = url(
+                    for: .search,
+                    queryParams: ["q": query]
+                ) else {
+                    return
+                }
             }
     
     //get stock info
