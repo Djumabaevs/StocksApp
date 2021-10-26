@@ -21,6 +21,13 @@ final class ApiCaller {
     
     //MARK: - Public
     
+    public func search(
+        query: String,
+        completion: @escaping (Result<[String], Error>) -> Void
+            ) {
+            
+            }
+    
     //get stock info
     
     //search stocks
@@ -53,7 +60,9 @@ final class ApiCaller {
         queryItems.append(.init(name: "token", value: Constants.apiKey))
         
         //Convert query items to suffix string
-        let queryString = queryItems.map{ ("\($0.name)=\($0.value ?? "")" }.joined(separator: "&")
+        let queryString = queryItems.map { "\($0.name)=\($0.value ?? "")" }.joined(separator: "&")
+        
+        urlString += "?" + queryString
         
         return URL(string: urlString)
     }
