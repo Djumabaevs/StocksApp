@@ -23,6 +23,7 @@
 		341C10F22726DFB30039B4B5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F12726DFB30039B4B5 /* HapticsManager.swift */; };
 		341C10F4272727DE0039B4B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F3272727DE0039B4B5 /* Extensions.swift */; };
 		341C10F627272C990039B4B5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */; };
+		341C10F8272883020039B4B5 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F7272883020039B4B5 /* SearchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		341C10F12726DFB30039B4B5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		341C10F3272727DE0039B4B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		341C10F7272883020039B4B5 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		341C10E42725DF350039B4B5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				341C10F7272883020039B4B5 /* SearchResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341C10F8272883020039B4B5 /* SearchResponse.swift in Sources */,
 				341C10B4272530CA0039B4B5 /* WatchListViewController.swift in Sources */,
 				341C10EA2725E1170039B4B5 /* SearchResultsViewController.swift in Sources */,
 				341C10F627272C990039B4B5 /* SearchResultTableViewCell.swift in Sources */,
