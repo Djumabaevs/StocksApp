@@ -31,6 +31,7 @@ final class ApiCaller {
                 ) else {
                     return
                 }
+        print(url.absoluteURL)
             }
     
     //get stock info
@@ -68,6 +69,8 @@ final class ApiCaller {
         let queryString = queryItems.map { "\($0.name)=\($0.value ?? "")" }.joined(separator: "&")
         
         urlString += "?" + queryString
+        
+        print("\n\(urlString)\n")
         
         return URL(string: urlString)
     }
