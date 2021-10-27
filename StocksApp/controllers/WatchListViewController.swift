@@ -56,7 +56,20 @@ extension WatchListViewController: UISearchResultsUpdating {
         }
         //Optimize to reduce number of searches for when user stops typing
         
-   
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in
+            //Call API to search
+            ApiCaller.shared.search(query: query) { result in
+                switch result {
+                case .success(let response):
+                    DispatchQueue.main.async {
+                        resultsVC.update(with: response.result)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+        })
         //Update results controller
         
 //        print(query)
