@@ -87,9 +87,12 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
     func searchResultsViewControllerDidSelect(searchResult: SearchResult) {
         //Present pet details for given selection
         // print("Did select: \(searchResult.displaySymbol)")
+        navigationItem.searchController?.searchBar.resignFirstResponder()
+        
         let vc = StockDetailsViewController()
         let navVC = UINavigationController(rootViewController: vc)
         vc.title = searchResult.description
+        present(navVC, animated: true)
     }
 }
 
