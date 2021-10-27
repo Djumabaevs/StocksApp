@@ -71,6 +71,7 @@ extension WatchListViewController: UISearchResultsUpdating {
                         resultsVC.update(with: response.result)
                     }
                 case .failure(let error):
+                    resultsVC.update(with: [])
                     print(error)
                 }
             }
@@ -85,7 +86,10 @@ extension WatchListViewController: UISearchResultsUpdating {
 extension WatchListViewController: SearchResultsViewControllerDelegate {
     func searchResultsViewControllerDidSelect(searchResult: SearchResult) {
         //Present pet details for given selection
-        print("Did select: \(searchResult.displaySymbol)")
+        // print("Did select: \(searchResult.displaySymbol)")
+        let vc = StockDetailsViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        vc.title = searchResult.description
     }
 }
 
