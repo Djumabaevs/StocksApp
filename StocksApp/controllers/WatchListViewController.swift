@@ -54,6 +54,12 @@ extension WatchListViewController: UISearchResultsUpdating {
               !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
+        
+        //Reset timer
+        
+        searchTimer?.invalidate()
+        
+        //Kick of new timer
         //Optimize to reduce number of searches for when user stops typing
         
         searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in

@@ -27,9 +27,11 @@ final class ApiCaller {
             ) {
         
         //Smarter way
-        
+        guard let safeQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return
+        }
         request(
-            url: url(for: .search, queryParams: ["q":query]),
+            url: url(for: .search, queryParams: ["q": safeQuery]),
             expecting: SearchResponse.self,
             completion: completion)
         
