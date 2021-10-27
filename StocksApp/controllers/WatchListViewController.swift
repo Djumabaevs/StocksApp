@@ -55,7 +55,13 @@ extension WatchListViewController: UISearchResultsUpdating {
         //Optimize to reduce number of searches for when user stops typing
         
         //Call API to search
-        
+        ApiCaller.shared.search(query: query) { result in
+            switch result {
+            case .success(let response):
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         //Update results controller
         resultsVC.update(with: ["Breeds of pets"])
