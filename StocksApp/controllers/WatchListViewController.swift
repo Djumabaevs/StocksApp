@@ -58,13 +58,15 @@ extension WatchListViewController: UISearchResultsUpdating {
         ApiCaller.shared.search(query: query) { result in
             switch result {
             case .success(let response):
+                DispatchQueue.main.async {
+                    resultsVC.update(with: response.result)
+                }
             case .failure(let error):
                 print(error)
             }
         }
         
         //Update results controller
-        resultsVC.update(with: ["Breeds of pets"])
         
 //        print(query)
     }
