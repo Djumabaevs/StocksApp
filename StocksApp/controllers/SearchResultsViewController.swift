@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchResultsViewControllerDelegate: AnyObject {
-    func searchResultsViewControllerDidSelect(searchResult: String)
+    func searchResultsViewControllerDidSelect(searchResult: SearchResult)
 }
 
 class SearchResultsViewController: UIViewController {
@@ -58,13 +58,15 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         let model = results[indexPath.row]
         
         cell.textLabel?.text = model.displaySymbol
-        cell.detailTextLabel?.text = model.description  
+        cell.detailTextLabel?.text = model.description
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.searchResultsViewControllerDidSelect(searchResult: "Pets from delegate")
+        let model = results[indexPath.row]
+        
+        delegate?.searchResultsViewControllerDidSelect(searchResult: model)
     }
 }
