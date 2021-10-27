@@ -20,7 +20,7 @@ class SearchResultsViewController: UIViewController {
         let tableView = UITableView()
         //Register a cell
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
-        
+        tableView.isHidden = true
         return tableView
     }()
 
@@ -43,6 +43,7 @@ class SearchResultsViewController: UIViewController {
     
     public func update(with results: [SearchResult]) {
         self.results = results
+        tableView.isHidden = results.isEmpty
         tableView.reloadData()
     }
 
