@@ -121,7 +121,7 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
 
 extension WatchListViewController: FloatingPanelControllerDelegate {
     func floatingPanelDidChangeState(_ fpc: FloatingPanelController) {
-        
+        navigationItem.titleView?.isHidden = fpc.state == .full
     }
 }
 
