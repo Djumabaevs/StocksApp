@@ -19,9 +19,19 @@ class WatchListViewController: UIViewController {
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
         setupTitleView()
+        setupChild()
     }
     
     //MARK: - Private
+    
+    private func setupChild() {
+        let vc = PanelViewController()
+        addChild(vc)
+        
+        view.addSubview(vc.view)
+        vc.view.frame = CGRect(x: 0, y: view.height/2, width: view.width, height: view.height)
+        vc.didMove(toParent: self)
+    }
     
     private func setupTitleView() {
         let titleView = UIView(frame: CGRect(

@@ -24,6 +24,7 @@
 		341C10F4272727DE0039B4B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F3272727DE0039B4B5 /* Extensions.swift */; };
 		341C10F627272C990039B4B5 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */; };
 		341C10F8272883020039B4B5 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F7272883020039B4B5 /* SearchResponse.swift */; };
+		341C10FA272B19140039B4B5 /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10F9272B19140039B4B5 /* PanelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		341C10F3272727DE0039B4B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		341C10F527272C990039B4B5 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		341C10F7272883020039B4B5 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		341C10F9272B19140039B4B5 /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				341C10E72725E0BA0039B4B5 /* TopStoriesNewsViewController.swift */,
 				341C10E92725E1170039B4B5 /* SearchResultsViewController.swift */,
 				341C10EB2725E13B0039B4B5 /* StockDetailsViewController.swift */,
+				341C10F9272B19140039B4B5 /* PanelViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				341C10B0272530CA0039B4B5 /* AppDelegate.swift in Sources */,
 				341C10E82725E0BA0039B4B5 /* TopStoriesNewsViewController.swift in Sources */,
 				341C10EC2725E13B0039B4B5 /* StockDetailsViewController.swift in Sources */,
+				341C10FA272B19140039B4B5 /* PanelViewController.swift in Sources */,
 				341C10BA272530CA0039B4B5 /* StocksApp.xcdatamodeld in Sources */,
 				341C10F02726DF900039B4B5 /* PersistenceManager.swift in Sources */,
 				341C10B2272530CA0039B4B5 /* SceneDelegate.swift in Sources */,
