@@ -32,6 +32,7 @@ class WatchListViewController: UIViewController {
         panel.surfaceView.backgroundColor = .secondarySystemBackground
         panel.set(contentViewController: vc)
         panel.addPanel(toParent: self)
+        panel.delegate = self
     }
     
     //MARK: - Private
@@ -115,6 +116,12 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
         let navVC = UINavigationController(rootViewController: vc)
         vc.title = searchResult.description
         present(navVC, animated: true)
+    }
+}
+
+extension WatchListViewController: FloatingPanelControllerDelegate {
+    func floatingPanelDidChangeState(_ fpc: FloatingPanelController) {
+        
     }
 }
 
