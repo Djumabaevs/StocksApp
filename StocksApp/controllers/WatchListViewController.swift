@@ -5,11 +5,14 @@
 //  Created by Bakyt Dzhumabaev on 24/10/21.
 //
 
+import FloatingPanel
 import UIKit
 
 class WatchListViewController: UIViewController {
     
     private var searchTimer: Timer?
+    
+    private var panel: FloatingPanelController?
     
     //MARK: - Lifecycle
 
@@ -19,7 +22,12 @@ class WatchListViewController: UIViewController {
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
         setupTitleView()
+        setupFloatingPanel()
 //        setupChild()
+    }
+    
+    private func setupFloatingPanel() {
+        
     }
     
     //MARK: - Private
