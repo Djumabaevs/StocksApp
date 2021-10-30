@@ -16,6 +16,18 @@ class NewsHeaderView: UITableViewHeaderFooterView {
         let shouldShowAddButton: Bool
     }
     
+    private let label: UILabel = {
+       let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 32)
+        return label
+    }()
+    
+    private let button: UIButton = {
+       let button = UIButton()
+        button.setTitle("+ WatchList", for: .normal)
+        return button
+    }()
+    
     //MARK: - Init
     
     override init(reuseIdentifier: String?) {
@@ -32,6 +44,10 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+    }
+    
+    public func configure(with viewmodel: ViewModel) {
+        
     }
 
 }
