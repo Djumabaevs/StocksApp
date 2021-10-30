@@ -36,8 +36,13 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(button)
+        contentView.addSubviews(label, button)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapButton() {
+        //Call delegate
+        
     }
     
     required init?(coder: NSCoder) {
@@ -46,14 +51,17 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        label.frame = CGRect(x: 14, y: 0, width: contentView.width-28, height: contentView.height)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        label.text = nil
     }
     
     public func configure(with viewmodel: ViewModel) {
-        
+        label.text = viewmodel.title
+        button.isHidden = !viewmodel.shouldShowAddButton
     }
 
 }
