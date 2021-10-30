@@ -17,6 +17,19 @@ class TopStoriesNewsViewController: UIViewController {
         return table
     }()
    
+    enum `Type` {
+        case topStories
+        case company(symbol: String)
+        
+        var title: String {
+            switch self {
+            case .topStories:
+                return "Top Stories"
+            case .company(let symbol):
+                return symbol.uppercased()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
