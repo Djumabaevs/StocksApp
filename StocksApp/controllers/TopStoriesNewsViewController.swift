@@ -12,7 +12,7 @@ class TopStoriesNewsViewController: UIViewController {
     let tableView: UITableView = {
         let table = UITableView()
         //Register cell, header
-        
+        table.backgroundColor = .clear
         
         return table
     }()
@@ -85,8 +85,16 @@ extension TopStoriesNewsViewController: UITableViewDataSource, UITableViewDelega
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
