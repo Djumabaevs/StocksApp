@@ -33,6 +33,8 @@ class TopStoriesNewsViewController: UIViewController {
         }
     }
     
+    //MARK: - Init
+    
     init(type: Type) {
         self.type = type
         super.init(nibName: nil, bundle: nil)
@@ -41,6 +43,8 @@ class TopStoriesNewsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +58,12 @@ class TopStoriesNewsViewController: UIViewController {
         tableView.frame = view.bounds
     }
     
+    //MARK: - Private
+    
     private func setupTable() {
-        
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     private func fetchNews() {
@@ -66,5 +74,6 @@ class TopStoriesNewsViewController: UIViewController {
         
     }
  
-
 }
+
+extension
