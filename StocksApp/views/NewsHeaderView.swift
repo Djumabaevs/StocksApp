@@ -36,6 +36,7 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubviews(label, button)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
@@ -52,6 +53,13 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         label.frame = CGRect(x: 14, y: 0, width: contentView.width-28, height: contentView.height)
+        
+        button.sizeToFit()
+        button.frame = CGRect(
+            x: contentView.width - button.width - 14,
+            y: (contentView.height - button.height)/2,
+            width: button.width + 8,
+            height: button.height)
     }
     
     override func prepareForReuse() {

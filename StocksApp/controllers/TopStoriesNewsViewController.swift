@@ -12,6 +12,7 @@ class TopStoriesNewsViewController: UIViewController {
     let tableView: UITableView = {
         let table = UITableView()
         //Register cell, header
+        table.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
         table.backgroundColor = .clear
         
         return table
@@ -86,7 +87,11 @@ extension TopStoriesNewsViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: NewsHeaderView.identifier) as? NewsHeaderView else {
+            return nil
+        }
+        header.configure(with: .init(title: self.type.title, shouldShowAddButton: true))
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,7 +99,7 @@ extension TopStoriesNewsViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return NewsHeaderView.preferredHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
