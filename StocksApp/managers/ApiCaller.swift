@@ -48,10 +48,18 @@ final class ApiCaller {
     
     //search stocks
     
+    public func news(
+        for type: TopStoriesNewsViewController.`Type`,
+        completion: @escaping (Result<[String], Error>) -> Void
+    ) {
+        let url = url(for: .topStories, queryParams: ["category": "general"])
+    }
+    
     //MARK: - Private
     
     private enum Endpoint: String {
         case search
+        case topStories = "news"
     }
     
     private enum ApiError: Error {
