@@ -16,6 +16,8 @@ class TopStoriesNewsViewController: UIViewController {
         
         return table
     }()
+    
+    private let type: Type
    
     enum `Type` {
         case topStories
@@ -29,6 +31,15 @@ class TopStoriesNewsViewController: UIViewController {
                 return symbol.uppercased()
             }
         }
+    }
+    
+    init(type: Type) {
+        self.type = type
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
     }
     
     override func viewDidLoad() {
