@@ -25,6 +25,10 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     private let button: UIButton = {
        let button = UIButton()
         button.setTitle("+ WatchList", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -32,6 +36,8 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(label)
+        contentView.addSubview(button)
     }
     
     required init?(coder: NSCoder) {
