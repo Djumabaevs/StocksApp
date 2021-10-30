@@ -50,9 +50,29 @@ final class ApiCaller {
     
     public func news(
         for type: TopStoriesNewsViewController.`Type`,
-        completion: @escaping (Result<[String], Error>) -> Void
+        completion: @escaping (Result<[NewStory], Error>) -> Void
     ) {
-        let url = url(for: .topStories, queryParams: ["category": "general"])
+        switch type{
+        case .topStories:
+            request(
+                url: url(
+                    for: .topStories,
+                    queryParams: ["category": "general"]),
+                expecting: [NewStory].self,
+                completion: completion)
+            case .company(let symbol):
+                request(
+                    url: url(
+                        for: .companyNews,
+                        queryParams: [
+                            "symbol": symbol,
+                            "from": "",
+                            "to": ""
+                        ]),
+                    expecting: [NewStory].self,
+                    completion: completion)
+        }
+        
     }
     
     //MARK: - Private
@@ -60,6 +80,7 @@ final class ApiCaller {
     private enum Endpoint: String {
         case search
         case topStories = "news"
+        case companyNews = "company-news"
     }
     
     private enum ApiError: Error {

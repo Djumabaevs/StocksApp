@@ -87,7 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func debug() {
-        
+        ApiCaller.shared.news(for: .topStories) { result in
+            print(result)
+        }
     }
 
 }
