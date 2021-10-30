@@ -30,7 +30,17 @@ class TopStoriesNewsViewController: UIViewController {
         tableView.frame = view.bounds
     }
     
-
+    private func setupTable() {
+        
+    }
+    
+    private func fetchNews() {
+        
+    }
+    
+    private func open(url: URL) {
+        
+    }
  
 
 }
