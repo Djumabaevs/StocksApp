@@ -13,7 +13,25 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     struct ViewModel {
         let title: String
-        let shouldShowAddButton
+        let shouldShowAddButton: Bool
+    }
+    
+    //MARK: - Init
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 
 }
