@@ -9,9 +9,19 @@ import UIKit
 
 class TopStoriesNewsViewController: UIViewController {
 
+    let tableView: UITableView = {
+        let table = UITableView()
+        //Register cell, header
+        
+        
+        return table
+    }()
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupTable()
+        fetchNews()
         
     }
     

@@ -21,8 +21,9 @@ class WatchListViewController: UIViewController {
      
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
-        setupTitleView()
         setupFloatingPanel()
+        setupTitleView()
+        
 //        setupChild()
     }
     
@@ -33,6 +34,7 @@ class WatchListViewController: UIViewController {
         panel.set(contentViewController: vc)
         panel.addPanel(toParent: self)
         panel.delegate = self
+        panel.track(scrollView: vc.tableView)
     }
     
     //MARK: - Private
