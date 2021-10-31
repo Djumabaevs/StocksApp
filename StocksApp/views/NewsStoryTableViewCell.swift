@@ -59,8 +59,8 @@ class NewsStoryTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = nil
-        backgroundColor = nil
+        contentView.backgroundColor = .systemBlue
+        backgroundColor = .systemBlue
         addSubviews(sourceLabel, headlineLabel, dateLabel, storyImageView)
     }
     
@@ -70,6 +70,12 @@ class NewsStoryTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        let imageSize: CGFloat = contentView.height - 6
+        storyImageView.frame = CGRect(x: contentView.width - imageSize - 10,
+                                      y: 3,
+                                      width: imageSize,
+                                      height: imageSize)
     }
     
     override func prepareForReuse() {
@@ -81,7 +87,9 @@ class NewsStoryTableViewCell: UITableViewCell {
     }
     
     public func configure(with viewModel: ViewModel) {
-        
+        headlineLabel.text = viewModel.headline
+        sourceLabel.text = viewModel.source
+        dateLabel.text = viewModel.dateString
     }
 
 }
