@@ -9,6 +9,10 @@ import UIKit
 
 class NewsStoryTableViewCell: UITableViewCell {
     static let identifier = "NewsStoryTableViewCell"
+    
+    struct ViewModel {
+        
+    }
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,6 +26,12 @@ class NewsStoryTableViewCell: UITableViewCell {
         super.layoutSubviews()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
     
+    public func configure(with viewModel: ViewModel) {
+        
+    }
 
 }
