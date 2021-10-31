@@ -14,6 +14,12 @@ class WatchListViewController: UIViewController {
     
     private var panel: FloatingPanelController?
     
+    //Model
+    private var watchlistMap: [String: [String]] = [:]
+    
+    //ViewModel
+    private var viewModels: [String] = []
+    
     private let tableView: UITableView = {
         let table = UITableView()
         
@@ -28,6 +34,7 @@ class WatchListViewController: UIViewController {
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
         setupTableView()
+        setupWatchlistData()
         setupFloatingPanel()
         setupTitleView()
         
@@ -54,6 +61,15 @@ class WatchListViewController: UIViewController {
 //        vc.view.frame = CGRect(x: 0, y: view.height/2, width: view.width, height: view.height)
 //        vc.didMove(toParent: self)
 //    }
+    
+    private func setupWatchlistData() {
+        let symbols = PersistenceManager.shared.watchlist
+        for symbol in symbols {
+            //Fetch market data per symbol
+            watchlistMap[symbol] = ["some string"]
+        }
+        tableView.reloadData()
+    }
     
     private func setupTableView() {
         view.addSubview(tableView)
@@ -137,6 +153,22 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
 extension WatchListViewController: FloatingPanelControllerDelegate {
     func floatingPanelDidChangeState(_ fpc: FloatingPanelController) {
         navigationItem.titleView?.isHidden = fpc.state == .full
+    }
+}
+
+extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return watchlistMap.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        //Open details for selection
+        
     }
 }
 
