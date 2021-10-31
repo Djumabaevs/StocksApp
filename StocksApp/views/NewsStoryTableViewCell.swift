@@ -14,6 +14,17 @@ class NewsStoryTableViewCell: UITableViewCell {
         
     }
         
+    //Source
+    private let sourceLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .medium)
+        return label
+    }()
+    
+    //Headline
+    //Date
+    //Image
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
