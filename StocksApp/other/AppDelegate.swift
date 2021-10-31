@@ -87,8 +87,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func debug() {
-        ApiCaller.shared.news(for: .topStories) { result in
-            print(result)
+        ApiCaller.shared.news(for: .company(symbol: "MSFT")) { result in
+            switch result {
+            case .success(let news):
+                print(news.count)
+            case .failure: break
+            }
         }
     }
 

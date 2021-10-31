@@ -19,7 +19,7 @@ class TopStoriesNewsViewController: UIViewController {
     }()
     
     //MARK: - Properties
-    private var stories = [String]()
+    private var stories = ["first"]
     
     private let type: Type
    
