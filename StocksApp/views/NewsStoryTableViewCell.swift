@@ -36,13 +36,15 @@ class NewsStoryTableViewCell: UITableViewCell {
     //Headline
     private let headlineLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 24, weight: .regular)
         return label
     }()
     
     //Date
     private let dateLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .light)
         return label
     }()
@@ -51,7 +53,7 @@ class NewsStoryTableViewCell: UITableViewCell {
     private let storyImageView: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
-        image.backgroundColor = .white
+        image.backgroundColor = .tertiarySystemBackground
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 6
         image.layer.masksToBounds = true
@@ -60,8 +62,8 @@ class NewsStoryTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .systemBlue
-        backgroundColor = .systemBlue
+        contentView.backgroundColor = .secondarySystemBackground
+        backgroundColor = nil
         addSubviews(sourceLabel, headlineLabel, dateLabel, storyImageView)
     }
     
