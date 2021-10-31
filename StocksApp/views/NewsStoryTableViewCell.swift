@@ -51,6 +51,7 @@ class NewsStoryTableViewCell: UITableViewCell {
     private let storyImageView: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
+        image.backgroundColor = .white
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 6
         image.layer.masksToBounds = true
@@ -76,6 +77,21 @@ class NewsStoryTableViewCell: UITableViewCell {
                                       y: 3,
                                       width: imageSize,
                                       height: imageSize)
+        //Layout labels
+        let availableWidth: CGFloat = contentView.width - separatorInset.left - imageSize - 10 - 5
+        dateLabel.frame = CGRect(x: separatorInset.left,
+                                 y: contentView.height - 40,
+                                 width: availableWidth,
+                                 height: 40)
+        sourceLabel.sizeToFit()
+        sourceLabel.frame = CGRect(x: separatorInset.left,
+                                 y: 4,
+                                 width: availableWidth,
+                                 height: sourceLabel.height)
+        headlineLabel.frame = CGRect(x: separatorInset.left,
+                                     y: sourceLabel.bottom + 5,
+                                 width: availableWidth,
+                                 height: contentView.height - sourceLabel.bottom - dateLabel.height - 10)
     }
     
     override func prepareForReuse() {
