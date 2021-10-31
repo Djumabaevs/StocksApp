@@ -39,11 +39,17 @@ class NewsStoryTableViewCell: UITableViewCell {
     private let storyImageView: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
+        image.contentMode = .scaleAspectFill
+        image.layer.cornerRadius = 6
+        image.layer.masksToBounds = true
         return image
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = nil
+        backgroundColor = nil
+        addSubviews(sourceLabel, headlineLabel, dateLabel, storyImageView)
     }
     
     required init?(coder: NSCoder) {
