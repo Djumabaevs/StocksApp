@@ -11,7 +11,17 @@ class NewsStoryTableViewCell: UITableViewCell {
     static let identifier = "NewsStoryTableViewCell"
     
     struct ViewModel {
+        let source: String
+        let headline: String
+        let dateString: String
+        let imageURL: URL?
         
+        init(model: NewStory) {
+            self.source = model.source
+            self.headline = model.headline
+            self.dateString = "Jun 21, 2021"
+            self.imageURL = nil
+        }
     }
         
     //Source
