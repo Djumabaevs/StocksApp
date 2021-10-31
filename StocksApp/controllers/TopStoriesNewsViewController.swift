@@ -22,7 +22,16 @@ class TopStoriesNewsViewController: UIViewController {
     }()
     
     //MARK: - Properties
-    private var stories = ["first"]
+    private var stories: [NewStory] = [
+        NewStory(category: "tech",
+                 datetime: 123,
+                 headline: "Some headline",
+                 image: "",
+                 related: "Related",
+                 source: "CNBC",
+                 summary: "",
+                 url: "")
+    ]
     
     private let type: Type
    
@@ -89,7 +98,13 @@ extension TopStoriesNewsViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: NewsStoryTableViewCell.identifier,
+                for: indexPath) as? NewsStoryTableViewCell else {
+                    fatalError()
+        }
+        cell.configure(with: .init(model: stories[indexPath.row]))
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
