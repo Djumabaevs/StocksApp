@@ -21,8 +21,8 @@ class NewsStoryTableViewCell: UITableViewCell {
         init(model: NewStory) {
             self.source = model.source
             self.headline = model.headline
-            self.dateString = "Jun 21, 2021"
-            self.imageURL = nil
+            self.dateString = .string(from: model.datetime)
+            self.imageURL = URL(string: model.image)
         }
     }
         
