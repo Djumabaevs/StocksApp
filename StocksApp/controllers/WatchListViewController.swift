@@ -14,6 +14,12 @@ class WatchListViewController: UIViewController {
     
     private var panel: FloatingPanelController?
     
+    private let tableView: UITableView = {
+        let table = UITableView()
+        
+        return table
+    }()
+    
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -21,6 +27,7 @@ class WatchListViewController: UIViewController {
      
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
+        setupTableView()
         setupFloatingPanel()
         setupTitleView()
         
@@ -47,6 +54,12 @@ class WatchListViewController: UIViewController {
 //        vc.view.frame = CGRect(x: 0, y: view.height/2, width: view.width, height: view.height)
 //        vc.didMove(toParent: self)
 //    }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
     
     private func setupTitleView() {
         let titleView = UIView(frame: CGRect(
