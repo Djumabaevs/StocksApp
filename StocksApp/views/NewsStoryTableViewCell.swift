@@ -10,6 +10,8 @@ import UIKit
 class NewsStoryTableViewCell: UITableViewCell {
     static let identifier = "NewsStoryTableViewCell"
     
+    static let preferredHeight:CGFloat = 140
+    
     struct ViewModel {
         let source: String
         let headline: String

@@ -12,7 +12,10 @@ class TopStoriesNewsViewController: UIViewController {
     let tableView: UITableView = {
         let table = UITableView()
         //Register cell, header
-        table.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
+        table.register(NewsStoryTableViewCell.self,
+                       forCellReuseIdentifier: NewsStoryTableViewCell.identifier)
+        table.register(NewsHeaderView.self,
+                       forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
         table.backgroundColor = .clear
         
         return table
@@ -98,7 +101,7 @@ extension TopStoriesNewsViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return NewsStoryTableViewCell.preferredHeight
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -107,5 +110,6 @@ extension TopStoriesNewsViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        //Open news story
     }
 }
