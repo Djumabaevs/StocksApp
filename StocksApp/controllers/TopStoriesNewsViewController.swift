@@ -22,16 +22,7 @@ class TopStoriesNewsViewController: UIViewController {
     }()
     
     //MARK: - Properties
-    private var stories: [NewStory] = [
-        NewStory(category: "tech",
-                 datetime: 123,
-                 headline: "Some headline",
-                 image: "",
-                 related: "Related",
-                 source: "CNBC",
-                 summary: "",
-                 url: "")
-    ]
+    private var stories = [NewStory]()
     
     private let type: Type
    
@@ -83,7 +74,17 @@ class TopStoriesNewsViewController: UIViewController {
     }
     
     private func fetchNews() {
-        
+        ApiCaller.shared.news(for: type) { [weak self] result in
+            switch result {
+            case .success(let stories):
+                DispatchQueue.main.async {
+                    self?.stories = stories
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func open(url: URL) {
