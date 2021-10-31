@@ -22,8 +22,25 @@ class NewsStoryTableViewCell: UITableViewCell {
     }()
     
     //Headline
+    private let headlineLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 17, weight: .regular)
+        return label
+    }()
+    
     //Date
+    private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .light)
+        return label
+    }()
+    
     //Image
+    private let storyImageView: UIImageView = {
+        let image = UIImageView()
+        image.clipsToBounds = true
+        return image
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
