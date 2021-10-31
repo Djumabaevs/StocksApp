@@ -1,4 +1,4 @@
-module Pods_StocksApp {
+framework module Pods_StocksApp {
   umbrella header "Pods-StocksApp-umbrella.h"
 
   export *

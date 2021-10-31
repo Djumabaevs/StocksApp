@@ -3,11 +3,12 @@
 
 target 'StocksApp' do
   # Comment the next line if you don't want to use dynamic frameworks
- # use_frameworks!
+  use_frameworks!
 
   # Pods for StocksApp
 
   pod "FloatingPanel"
+  pod "SDWebImage"
 
   target 'StocksAppTests' do
     inherit! :search_paths

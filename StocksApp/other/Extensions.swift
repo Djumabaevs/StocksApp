@@ -13,7 +13,7 @@ extension UIImageView {
         guard let url = url else {
             return
         }
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: .userInteractive).async {
             let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return

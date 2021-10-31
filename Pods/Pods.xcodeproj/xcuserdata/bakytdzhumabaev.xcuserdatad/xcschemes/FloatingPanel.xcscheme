@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4874E7E655CEB4C01E4572AD903AEA21"
-               BuildableName = "libFloatingPanel.a"
+               BuildableName = "FloatingPanel.framework"
                BlueprintName = "FloatingPanel"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

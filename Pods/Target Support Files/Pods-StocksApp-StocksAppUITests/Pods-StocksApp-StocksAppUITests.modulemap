@@ -1,4 +1,4 @@
-module Pods_StocksApp_StocksAppUITests {
+framework module Pods_StocksApp_StocksAppUITests {
   umbrella header "Pods-StocksApp-StocksAppUITests-umbrella.h"
 
   export *
