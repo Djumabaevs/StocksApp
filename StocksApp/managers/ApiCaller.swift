@@ -85,7 +85,9 @@ final class ApiCaller {
     ) {
         let today = Date().addingTimeInterval(-(Constants.day))
         let prior = today.addingTimeInterval(-(Constants.day * numberOfDays))
-        let url = url(
+        
+        request (
+            url: url (
             for: .marketData,
             queryParams: [
                 "symbol": symbol,
@@ -95,11 +97,10 @@ final class ApiCaller {
 //                "from": DateFormatter.newsDateFormatter.string(from: prior),
 //                "to": DateFormatter.newsDateFormatter.string(from: today)
             ]
-            )
-        request(
-            url: url,
+            ),
             expecting: MarketDataResponse.self,
-            completion: completion)
+            completion: completion
+        )
     }
     
     //MARK: - Private

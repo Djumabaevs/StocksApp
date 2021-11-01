@@ -96,30 +96,32 @@ class WatchListViewController: UIViewController {
         var viewmodels = [WatchListTableViewCell.ViewModel]()
         
         for(symbol, candleSticks) in watchlistMap {
-            let changePercentage = getChangePercentage(for: candleSticks)
+            let changePercentage = getChangePercentage(symbol: symbol, data: candleSticks)
             viewmodels.append(
                 .init(
                     symbol: symbol,
                     companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
                     price: getLatestClosingPrice(from: candleSticks),
                     changeColor: changePercentage < 0 ? .systemRed : .systemGreen,
-                    changePercentage: ""
+                    changePercentage: "\(changePercentage)"
                 )
             )
         }
         self.viewModels = viewmodels
     }
     
-    private func getChangePercentage(for data: [CandleStick]) -> Double {
+    private func getChangePercentage(symbol: String, data: [CandleStick]) -> Double {
   //      let today = Date()
-        let priorDate = Date().addingTimeInterval((-(3600*24)*2))
+  //      let priorDate = Date().addingTimeInterval(-((3600*24)*2))
+        let date = data[0].date
         guard let latestClose = data.first?.close,
             let priorClose = data.first(where: {
-                Calendar.current.isDate($0.date, inSameDayAs: priorDate)
+                ! Calendar.current.isDate($0.date, inSameDayAs: date)
             })?.close else {
-            return
+            return 0
         }
-        print("Current: \(latestClose) |  Prior: \(priorDate)")
+        print("Symbol: \(symbol): Current(\(data[0].date): \(latestClose) |  Prior\(priorDate): \(priorClose)")
+        return priorClose/latestClose
     }
     
     private func getLatestClosingPrice(from data: [CandleStick]) -> String {
