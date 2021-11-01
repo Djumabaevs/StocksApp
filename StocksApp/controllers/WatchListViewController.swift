@@ -34,7 +34,7 @@ class WatchListViewController: UIViewController {
         view.backgroundColor = .tertiarySystemBackground
         setupSearchController()
         setupTableView()
-        setupWatchlistData()
+        fetchWatchlistData()
         setupFloatingPanel()
         setupTitleView()
         
@@ -62,8 +62,10 @@ class WatchListViewController: UIViewController {
 //        vc.didMove(toParent: self)
 //    }
     
-    private func setupWatchlistData() {
+    private func fetchWatchlistData() {
         let symbols = PersistenceManager.shared.watchlist
+        
+        let group = DispatchGroup()
         for symbol in symbols {
             //Fetch market data per symbol
             watchlistMap[symbol] = ["some string"]
