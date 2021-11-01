@@ -111,11 +111,15 @@ class WatchListViewController: UIViewController {
     }
     
     private func getChangePercentage(for data: [CandleStick]) -> String {
-        let today = Date()
+  //      let today = Date()
         let priorDate = Date().addingTimeInterval((-(3600*24)*2))
-        let latestClose = data.first?.close else {
+        guard let latestClose = data.first?.close,
+            let priorClose = data.first(where: {
+                Calendar.current.isDate($0.date, inSameDayAs: priorDate)
+            })?.close else {
             return
         }
+        print("\(latestClose)")
     }
     
     private func getLatestClosingPrice(from data: [CandleStick]) -> String {
