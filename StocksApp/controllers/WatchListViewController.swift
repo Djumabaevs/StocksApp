@@ -87,7 +87,15 @@ class WatchListViewController: UIViewController {
         }
      //   tableView.reloadData()
         group.notify(queue: .main) { [weak self] in
+            self?.createViewModels()
             self?.tableView.reloadData()
+        }
+    }
+    
+    private func createViewModels() {
+        var viewmodels = [WatchListTableViewCell.ViewModel]()
+        for(symbol, candleSticks) in watchlistMap {
+            
         }
     }
     

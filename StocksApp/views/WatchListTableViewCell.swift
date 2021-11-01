@@ -13,7 +13,12 @@ class WatchListTableViewCell: UITableViewCell {
     static let preferredHeight: CGFloat = 60
     
     struct ViewModel {
-        
+        let symbol: String
+        let companyName: String
+        let price: String //formatted
+        let changeColor: UIColor //red or green
+        let changePercentage: String //formatted
+        //let chartViewModel: StockChartView.ViewModel
     }
     
     //Symbol label
@@ -65,10 +70,20 @@ class WatchListTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        nameLabel.text = nil
+        priceLabel.text = nil
+        symbolLabel.text = nil
+        changeLabel.text = nil
+        miniChartView.reset()
     }
     
     public func configure(with viewModel: ViewModel) {
-        
+        symbolLabel.text = viewModel.symbol
+        nameLabel.text = viewModel.companyName
+        priceLabel.text = viewModel.price
+        changeLabel.text = viewModel.changePercentage
+        changeLabel.backgroundColor = viewModel.changeColor
+        //Configure chart
     }
 
 }
