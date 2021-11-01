@@ -97,7 +97,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
     private func debug() {
         ApiCaller.shared.marketData(for: "AAPL", numberOfDays: 1) { result in
-            print(result)
+            switch result {
+            case .success(let data):
+                let candleSticks = data.candleSticks
+            case.failure(let error):
+                print(error)
+            }
         }
     }
 
