@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		341C10FC272D0B8F0039B4B5 /* NewsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10FB272D0B8F0039B4B5 /* NewsHeaderView.swift */; };
 		341C10FE272D52A80039B4B5 /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10FD272D52A80039B4B5 /* NewsStory.swift */; };
 		341C1100272E4A5C0039B4B5 /* NewsStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C10FF272E4A5C0039B4B5 /* NewsStoryTableViewCell.swift */; };
+		341C1102272EFD600039B4B5 /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341C1101272EFD600039B4B5 /* MarketDataResponse.swift */; };
 		6D8A41098945BBCF668DECA8 /* Pods_StocksApp_StocksAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48B384E16765F93D1C09384 /* Pods_StocksApp_StocksAppUITests.framework */; };
 		AACF20E69585EA76E6513391 /* Pods_StocksAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91426EE73B56C10427257D47 /* Pods_StocksAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		341C10FB272D0B8F0039B4B5 /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
 		341C10FD272D52A80039B4B5 /* NewsStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStory.swift; sourceTree = "<group>"; };
 		341C10FF272E4A5C0039B4B5 /* NewsStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryTableViewCell.swift; sourceTree = "<group>"; };
+		341C1101272EFD600039B4B5 /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 		91426EE73B56C10427257D47 /* Pods_StocksAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StocksAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B48B384E16765F93D1C09384 /* Pods_StocksApp_StocksAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StocksApp_StocksAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DF3D0868952788C9A5A671 /* Pods-StocksApp-StocksAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StocksApp-StocksAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StocksApp-StocksAppUITests/Pods-StocksApp-StocksAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				341C10F7272883020039B4B5 /* SearchResponse.swift */,
 				341C10FD272D52A80039B4B5 /* NewsStory.swift */,
+				341C1101272EFD600039B4B5 /* MarketDataResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			files = (
 				341C10F8272883020039B4B5 /* SearchResponse.swift in Sources */,
 				341C10B4272530CA0039B4B5 /* WatchListViewController.swift in Sources */,
+				341C1102272EFD600039B4B5 /* MarketDataResponse.swift in Sources */,
 				341C10EA2725E1170039B4B5 /* SearchResultsViewController.swift in Sources */,
 				341C10F627272C990039B4B5 /* SearchResultTableViewCell.swift in Sources */,
 				341C10B0272530CA0039B4B5 /* AppDelegate.swift in Sources */,

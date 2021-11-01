@@ -86,13 +86,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+//    private func debug() {
+//        ApiCaller.shared.news(for: .company(symbol: "MSFT")) { result in
+//            switch result {
+//            case .success(let news):
+//                print(news.count)
+//            case .failure: break
+//            }
+//        }
+//    }
     private func debug() {
-        ApiCaller.shared.news(for: .company(symbol: "MSFT")) { result in
-            switch result {
-            case .success(let news):
-                print(news.count)
-            case .failure: break
-            }
+        ApiCaller.shared.marketData(for: "AAPL", numberOfDays: 1) { result in
+            print(result)
         }
     }
 
