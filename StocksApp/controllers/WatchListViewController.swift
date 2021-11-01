@@ -18,7 +18,7 @@ class WatchListViewController: UIViewController {
     private var watchlistMap: [String: [CandleStick]] = [:]
     
     //ViewModel
-    private var viewModels: [String] = []
+    private var viewModels: [WatchListTableViewCell.ViewModel] = []
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -95,8 +95,17 @@ class WatchListViewController: UIViewController {
     private func createViewModels() {
         var viewmodels = [WatchListTableViewCell.ViewModel]()
         for(symbol, candleSticks) in watchlistMap {
-            
+            viewmodels.append(
+                .init(
+                    symbol: symbol,
+                    companyName: <#T##String#>,
+                    price: <#T##String#>,
+                    changeColor: <#T##UIColor#>,
+                    changePercentage: ""
+                )
+            )
         }
+        self.viewModels = viewmodels
     }
     
     private func setupTableView() {
