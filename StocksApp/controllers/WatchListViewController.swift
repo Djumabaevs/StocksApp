@@ -15,7 +15,7 @@ class WatchListViewController: UIViewController {
     private var panel: FloatingPanelController?
     
     //Model
-    private var watchlistMap: [String: [String]] = [:]
+    private var watchlistMap: [String: [CandleStick]] = [:]
     
     //ViewModel
     private var viewModels: [String] = []
@@ -71,7 +71,7 @@ class WatchListViewController: UIViewController {
             group.enter()
             //Fetch market data per symbol
             //watchlistMap[symbol] = ["some string"]
-            ApiCaller.shared.marketData(for: symbol) { result in
+            ApiCaller.shared.marketData(for: symbol) { [weak self] result in
                 defer {
                     group.leave()
                 }
@@ -79,6 +79,7 @@ class WatchListViewController: UIViewController {
                 switch result{
                 case .success(let data):
                     let candleSticks = data.candleSticks
+                    self?.watchlistMap[symbol] = candleSticks
                 case .failure(let error):
                     print(error)
                 }
