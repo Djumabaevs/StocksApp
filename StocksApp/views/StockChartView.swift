@@ -13,4 +13,12 @@ class StockChartView: UIView {
         super.init(frame: frame)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
 }

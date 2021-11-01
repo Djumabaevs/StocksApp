@@ -41,9 +41,18 @@ class WatchListTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 15, weight: .regular)
         return label
     }()
+    //Mini cahrt view
+    private let miniChartView = StockChartView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubviews(
+            priceLabel,
+            changeLabel,
+            miniChartView,
+            nameLabel,
+            symbolLabel
+        )
     }
     
     required init?(coder: NSCoder) {
