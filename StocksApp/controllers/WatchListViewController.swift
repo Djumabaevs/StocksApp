@@ -66,11 +66,25 @@ class WatchListViewController: UIViewController {
         let symbols = PersistenceManager.shared.watchlist
         
         let group = DispatchGroup()
+        
         for symbol in symbols {
+            group.enter()
             //Fetch market data per symbol
-            watchlistMap[symbol] = ["some string"]
+            //watchlistMap[symbol] = ["some string"]
+            ApiCaller.shared.marketData(for: symbol) { result in
+                defer {
+                    group.leave()
+                }
+                
+                switch result{
+                
+                }
+            }
         }
-        tableView.reloadData()
+     //   tableView.reloadData()
+        group.notify(queue: .main) { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     private func setupTableView() {
