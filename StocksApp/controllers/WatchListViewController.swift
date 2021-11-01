@@ -102,7 +102,7 @@ class WatchListViewController: UIViewController {
                     symbol: symbol,
                     companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
                     price: getLatestClosingPrice(from: candleSticks),
-                    changeColor: <#T##UIColor#>,
+                    changeColor: changePercentage < 0 ? .systemRed : .systemGreen,
                     changePercentage: ""
                 )
             )
@@ -110,7 +110,7 @@ class WatchListViewController: UIViewController {
         self.viewModels = viewmodels
     }
     
-    private func getChangePercentage(for data: [CandleStick]) -> String {
+    private func getChangePercentage(for data: [CandleStick]) -> Double {
   //      let today = Date()
         let priorDate = Date().addingTimeInterval((-(3600*24)*2))
         guard let latestClose = data.first?.close,
@@ -119,7 +119,7 @@ class WatchListViewController: UIViewController {
             })?.close else {
             return
         }
-        print("\(latestClose)")
+        print("Current: \(latestClose) |  Prior: \(priorDate)")
     }
     
     private func getLatestClosingPrice(from data: [CandleStick]) -> String {
