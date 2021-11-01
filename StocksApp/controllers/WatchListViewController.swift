@@ -113,14 +113,14 @@ class WatchListViewController: UIViewController {
     private func getChangePercentage(symbol: String, data: [CandleStick]) -> Double {
   //      let today = Date()
   //      let priorDate = Date().addingTimeInterval(-((3600*24)*2))
-        let date = data[0].date
+        let latestDate = data[0].date
         guard let latestClose = data.first?.close,
             let priorClose = data.first(where: {
-                ! Calendar.current.isDate($0.date, inSameDayAs: date)
+                !Calendar.current.isDate($0.date, inSameDayAs: latestDate)
             })?.close else {
             return 0
         }
-        print("Symbol: \(symbol): Current(\(data[0].date): \(latestClose) |  Prior\(priorDate): \(priorClose)")
+        print("Symbol: \(symbol): Current \(latestDate): \(latestClose) |  Prior \(priorClose)")
         return priorClose/latestClose
     }
     
