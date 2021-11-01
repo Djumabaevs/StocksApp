@@ -77,7 +77,10 @@ class WatchListViewController: UIViewController {
                 }
                 
                 switch result{
-                
+                case .success(let data):
+                    let candleSticks = data.candleSticks
+                case .failure(let error):
+                    print(error)
                 }
             }
         }
