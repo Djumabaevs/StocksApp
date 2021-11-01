@@ -94,7 +94,9 @@ class WatchListViewController: UIViewController {
     
     private func createViewModels() {
         var viewmodels = [WatchListTableViewCell.ViewModel]()
+        
         for(symbol, candleSticks) in watchlistMap {
+            let changePercentage = getChangePercentage(for: candleSticks)
             viewmodels.append(
                 .init(
                     symbol: symbol,
@@ -108,8 +110,19 @@ class WatchListViewController: UIViewController {
         self.viewModels = viewmodels
     }
     
+    private func getChangePercentage(for data: [CandleStick]) -> String {
+        let today = Date()
+        let priorDate = Date().addingTimeInterval((-(3600*24)*2))
+        let latestClose = data.first?.close else {
+            return
+        }
+    }
+    
     private func getLatestClosingPrice(from data: [CandleStick]) -> String {
-        
+        guard let closingPrice = data.first?.close else {
+            return ""
+        }
+        return "\(closingPrice)"
     }
     
     private func setupTableView() {
