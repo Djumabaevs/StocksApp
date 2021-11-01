@@ -98,14 +98,18 @@ class WatchListViewController: UIViewController {
             viewmodels.append(
                 .init(
                     symbol: symbol,
-                    companyName: <#T##String#>,
-                    price: <#T##String#>,
+                    companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
+                    price: getLatestClosingPrice(from: candleSticks),
                     changeColor: <#T##UIColor#>,
                     changePercentage: ""
                 )
             )
         }
         self.viewModels = viewmodels
+    }
+    
+    private func getLatestClosingPrice(from data: [CandleStick]) -> String {
+        
     }
     
     private func setupTableView() {
