@@ -120,8 +120,10 @@ class WatchListViewController: UIViewController {
             })?.close else {
             return 0
         }
-        print("Symbol: \(symbol): Current \(latestDate): \(latestClose) |  Prior \(priorClose)")
-        return priorClose/latestClose
+    //    print("Symbol: \(symbol): Current \(latestDate): \(latestClose) |  Prior \(priorClose)")
+        let diff = 1 - (priorClose/latestClose)
+        print("\(symbol): \(diff)%")
+        return diff
     }
     
     private func getLatestClosingPrice(from data: [CandleStick]) -> String {
