@@ -59,12 +59,14 @@ class WatchListTableViewCell: UITableViewCell {
     //Mini chart view
     private let miniChartView: StockChartView = {
         let chart = StockChartView()
-        chart.backgroundColor = .link
+ //       chart.backgroundColor = .link
+        chart.clipsToBounds = true
         return chart
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.clipsToBounds = true
         addSubviews(
             priceLabel,
             changeLabel,
@@ -110,7 +112,7 @@ class WatchListTableViewCell: UITableViewCell {
         
         priceLabel.frame = CGRect(
             x: contentView.width - 10 - currentWidth,
-            y: 0,
+            y: (contentView.height - priceLabel.height - changeLabel.height)/2,
             width: currentWidth,
             height: priceLabel.height
         )
