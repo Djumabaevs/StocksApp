@@ -113,7 +113,11 @@ class WatchListViewController: UIViewController {
                     companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
                     price: getLatestClosingPrice(from: candleSticks),
                     changeColor: changePercentage < 0 ? .systemRed : .systemGreen,
-                    changePercentage: String.percentage(from: changePercentage)
+                    changePercentage: String.percentage(from: changePercentage),
+                    chartViewModel: .init(
+                        data: candleSticks,
+                        showLegend: false,
+                        showAxis: false)
                 )
             )
         }
