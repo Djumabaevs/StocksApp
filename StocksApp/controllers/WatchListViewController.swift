@@ -14,6 +14,9 @@ class WatchListViewController: UIViewController {
     
     private var panel: FloatingPanelController?
     
+    static var maxChangeWidth: CGFloat = 0
+    
+    
     //Model
     private var watchlistMap: [String: [CandleStick]] = [:]
     
@@ -237,6 +240,7 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WatchListTableViewCell.identifier, for: indexPath) as? WatchListTableViewCell else {
             fatalError()
         }
+        cell.delegate = self
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
@@ -249,6 +253,13 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         //Open details for selection
         
+    }
+}
+
+extension WatchListViewController: WatchListTableViewCellDelegate {
+    func didUpdateMaxWidth() {
+        //Optimize: only refresh rows prior to the current row that changes the max width
+        tableView.reloadData()
     }
 }
 
