@@ -82,6 +82,7 @@ class WatchListViewController: UIViewController {
             queue: .main,
             using: { [weak self] _ in
                 self?.viewModels.removeAll()
+                self?.fetchWatchlistData()
             })
     }
     
@@ -90,7 +91,7 @@ class WatchListViewController: UIViewController {
         
         let group = DispatchGroup()
         
-        for symbol in symbols {
+        for symbol in symbols where watchlistMap[symbol] == nil {
             group.enter()
             //Fetch market data per symbol
             //watchlistMap[symbol] = ["some string"]
@@ -290,7 +291,9 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //Open details for selection
-        
+        let vc = StockDetailsViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true)
     }
 }
 
