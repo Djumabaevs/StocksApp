@@ -291,7 +291,11 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //Open details for selection
-        let vc = StockDetailsViewController()
+        let viewmodel = viewModels[indexPath.row]
+        let vc = StockDetailsViewController(
+            symbol: viewmodel.symbol,
+            companyName: viewmodel.companyName,
+            candleStickData: <#T##[CandleStick]#>)
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true)
     }
