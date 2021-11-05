@@ -31,6 +31,8 @@ class WatchListViewController: UIViewController {
         return table
     }()
     
+    private var observer: NSObjectProtocol?
+    
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -42,6 +44,7 @@ class WatchListViewController: UIViewController {
         fetchWatchlistData()
         setupFloatingPanel()
         setupTitleView()
+        setupObserver()
         
 //        setupChild()
     }
@@ -71,6 +74,16 @@ class WatchListViewController: UIViewController {
 //        vc.view.frame = CGRect(x: 0, y: view.height/2, width: view.width, height: view.height)
 //        vc.didMove(toParent: self)
 //    }
+    
+    private func setupObserver() {
+        observer = NotificationCenter.default.addObserver(
+            forName: .didAddToWatchList,
+            object: nil,
+            queue: .main,
+            using: { [weak self] _ in
+                self?.viewModels.removeAll()
+            })
+    }
     
     private func fetchWatchlistData() {
         let symbols = PersistenceManager.shared.watchlist

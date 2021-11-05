@@ -35,6 +35,8 @@ final class PersistenceManager {
         current.append(symbol)
         userDefaults.set(current, forKey: Constants.watchListKey)
         userDefaults.set(companyName,forKey: symbol)
+        
+        NotificationCenter.default.post(name: .didAddToWatchList, object: nil)
     }
     
     public func removeFromWatchlist(symbol: String) {
