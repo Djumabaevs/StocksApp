@@ -236,7 +236,11 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
         // print("Did select: \(searchResult.displaySymbol)")
         navigationItem.searchController?.searchBar.resignFirstResponder()
         
-        let vc = StockDetailsViewController()
+        let vc = StockDetailsViewController(
+            symbol: searchResult.displaySymbol,
+            companyName: searchResult.description
+          //  candleStickData: [] -> default is empty array
+        )
         let navVC = UINavigationController(rootViewController: vc)
         vc.title = searchResult.description
         present(navVC, animated: true)
@@ -295,7 +299,8 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = StockDetailsViewController(
             symbol: viewmodel.symbol,
             companyName: viewmodel.companyName,
-            candleStickData: <#T##[CandleStick]#>)
+            candleStickData: watchlistMap[viewmodel.symbol] ?? []
+        )
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true)
     }
