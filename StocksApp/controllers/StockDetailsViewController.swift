@@ -67,7 +67,17 @@ class StockDetailsViewController: UIViewController {
     }
     
     private func fetchNews() {
-        
+        ApiCaller.shared.news(for: .company(symbol: symbol)) { [weak self] result in
+            switch result{
+            case .success(let stories):
+                DispatchQueue.main.async {
+                    self?.stories = stories
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func renderChart() {
