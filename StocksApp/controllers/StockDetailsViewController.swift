@@ -95,6 +95,21 @@ extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return NewsStoryTableViewCell.preferredHeight
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: NewsHeaderView.identifier) as? NewsHeaderView else {
+            return nil
+        }
+        header.delegate = self
+        header.configure(with: .init(
+            title: symbol.uppercased(),
+            shouldShowAddButton: true))
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return NewsHeaderView.preferredHeight
+    }
 }
 
 extension StockDetailsViewController: NewsHeaderViewDelegate {
