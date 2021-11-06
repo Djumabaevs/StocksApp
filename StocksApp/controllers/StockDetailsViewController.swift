@@ -43,13 +43,25 @@ class StockDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        //Show view
-        //Financial data
-        //Chart/Graph
-        //Show news
+        setupTable()
+        fetchFinancialData()
+        fetchNews()
+    }
+    
+    //MARK: - Private
+    private func setupTable() {
         
     }
     
-
-
+    private func fetchFinancialData() {
+        renderChart()
+    }
+    
+    private func fetchNews() {
+        
+    }
+    
+    private func renderChart() {
+        
+    }
 }
