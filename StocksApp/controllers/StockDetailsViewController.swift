@@ -48,9 +48,16 @@ class StockDetailsViewController: UIViewController {
         fetchNews()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
     //MARK: - Private
     private func setupTable() {
-        
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     private func fetchFinancialData() {
@@ -64,4 +71,8 @@ class StockDetailsViewController: UIViewController {
     private func renderChart() {
         
     }
+}
+
+extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
 }
