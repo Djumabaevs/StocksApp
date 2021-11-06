@@ -114,7 +114,8 @@ extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource
         header.delegate = self
         header.configure(with: .init(
             title: symbol.uppercased(),
-            shouldShowAddButton: true))
+            shouldShowAddButton: !PersistenceManager.shared.watchlistContains(symbol: symbol)
+        ))
         return header
     }
     
@@ -133,5 +134,13 @@ extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource
 extension StockDetailsViewController: NewsHeaderViewDelegate {
     func newsHeaderViewDidTapAddButton(_ headerView: NewsHeaderView) {
         //Add to watchlist
+        headerView.button.isHidden = true
+        PersistenceManager.shared.addToWatchlist(symbol: symbol, companyName: companyName)
+        let alert = UIAlertController(
+            title: "Added to watchlist",
+            message: "We've added \(companyName) to your watchlist",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
     }
 }
