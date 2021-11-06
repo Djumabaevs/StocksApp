@@ -23,6 +23,8 @@ class StockDetailsViewController: UIViewController {
         return table
     }()
     
+    private var stories: [NewStory] = []
+    
     //MARK: - Init
     init(
         symbol: String,
@@ -74,5 +76,29 @@ class StockDetailsViewController: UIViewController {
 }
 
 extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stories.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsStoryTableViewCell.identifier, for: indexPath) as? NewsStoryTableViewCell else {
+            fatalError()
+        }
+        cell.configure(with: .init(model: stories[indexPath.row]))
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return NewsStoryTableViewCell.preferredHeight
+    }
+}
+
+extension StockDetailsViewController: NewsHeaderViewDelegate {
+    func newsHeaderViewDidTapAddButton(_ headerView: NewsHeaderView) {
+        //Add to watchlist
+    }
 }
