@@ -60,7 +60,14 @@ class StockDetailsViewController: UIViewController {
     
     //MARK: - Private
     private func setupCloseButton() {
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .close,
+            target: self,
+            action: #selector(didTapClose))
+    }
+    
+    @objc private func didTapClose() {
+        dismiss(animated: true, completion: nil)
     }
     
     private func setupTable() {
