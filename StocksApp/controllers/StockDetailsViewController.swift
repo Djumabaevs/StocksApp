@@ -14,6 +14,15 @@ class StockDetailsViewController: UIViewController {
     private let companyName: String
     private var candleStickData: [CandleStick]
     
+    private let tableView: UITableView = {
+        let table = UITableView()
+        table.register(NewsHeaderView.self,
+                       forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
+        table.register(NewsStoryTableViewCell.self,
+                       forCellReuseIdentifier: NewsStoryTableViewCell.identifier)
+        return table
+    }()
+    
     //MARK: - Init
     init(
         symbol: String,
@@ -34,6 +43,11 @@ class StockDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        //Show view
+        //Financial data
+        //Chart/Graph
+        //Show news
+        
     }
     
 
