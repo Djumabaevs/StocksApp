@@ -21,12 +21,12 @@ struct Metrics: Codable {
         let beta: Float
         
         enum CodingKeys: String, CodingKey {
-            case TenDayAverageTradingVolume: "10DayAverageTradingVolume:"
-            case AnnualWeekHigh: "52WeekHigh"
-            case AnnualWeekLow: "52WeekLow"
-            case AnnualWeekLowDate: "52WeekLowDate"
-            case AnnualWeekPriceReturnDaily: "52WeekPriceReturnDaily"
-            case beta: "beta"
+            case TenDayAverageTradingVolum = "10DayAverageTradingVolume:"
+            case AnnualWeekHigh = "52WeekHigh"
+            case AnnualWeekLow = "52WeekLow"
+            case AnnualWeekLowDate = "52WeekLowDate"
+            case AnnualWeekPriceReturnDaily = "52WeekPriceReturnDaily"
+            case beta = "beta"
         }
     }
 
