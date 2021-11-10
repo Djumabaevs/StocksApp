@@ -98,8 +98,9 @@ class StockDetailsViewController: UIViewController {
                 print(error)
             }
         }
-        
-        renderChart()
+        group.notify(queue: .main) { [weak self] in
+            self?.renderChart()
+        }
     }
     
     private func fetchNews() {
@@ -117,7 +118,7 @@ class StockDetailsViewController: UIViewController {
     }
     
     private func renderChart() {
-        
+        //Chart VM || FInancialMetricViewModel(s    )
     }
 }
 
