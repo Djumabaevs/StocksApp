@@ -103,6 +103,19 @@ final class ApiCaller {
         )
     }
     
+    public func financialMetrics(
+        for symbol: String,
+        completion: @escaping (Result<String, Error>) -> Void
+    ) {
+        let url = url(
+            for: .financials,
+               queryParams: ["symbol": symbol, "metric": "all"])
+        request(
+            url: url,
+            expecting: String.self,
+            completion: completion)
+    }
+    
     //MARK: - Private
     
     private enum Endpoint: String {
@@ -110,6 +123,7 @@ final class ApiCaller {
         case topStories = "news"
         case companyNews = "company-news"
         case marketData = "stock/candle"
+        case financials = "stock/metric"
     }
     
     private enum ApiError: Error {
